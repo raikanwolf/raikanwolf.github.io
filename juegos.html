@@ -1,33 +1,134 @@
+<!--ID describes something singular.
+Class describes something with multiple elements-->
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<title>Portfolio</title>
+	<meta name="description" content="Portafolio profesional de Helvis Basantes, ingeniero informático interesado en desarrollo web e inteligencia artificial.">
+	<title>Helvis Basantes | Portafolio</title>
 	<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 	<!--MENU ENCABEZADO-->
 	<div class="contenedor-header">
-		
+		<header><!--contenedor de logo-->
+			<div class="logo">
+				<a href="index.html">Helvis</a>
+			</div>
+			<nav id="nav"> <!--se agregara una clase "responsive con js"-->
+				<ul>
+					<li><a href="#inicio" onclick="seleccionar()">INICIO</a></li>
+					<li><a href="#sobremi" onclick="seleccionar()">SOBRE MI</a></li>
+					<li><a href="#skills" onclick="seleccionar()">SKILLS</a></li>
+					<li><a href="#curriculum" onclick="seleccionar()">CURRICULUM</a></li>
+					<li><a href="#portfolio" onclick="seleccionar()">PORTFOLIO</a></li>
+					<li><a href="#contacto" onclick="seleccionar()">CONTACTO</a></li>
+
+				</ul>
+			</nav>
+
+			<div class="nav-responsive" onclick="mostrarOcultarMenu()">
+				<i class="fa-solid fa-bars"></i>
+			</div>
+		</header>
 	</div>
 
 
 
-	
+	<!-- GALERÍA PERSONAL -->
+	<section id="portfolio" class="portfolio">
+		<div class="contenido-seccion">
+			<h2>Cosas random que me gustan</h2>
+			<div class="galeria">
+
+				<div class="proyecto" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Ampliar imagen: One Piece, Tony Tony Chopper">
+					<img src="img2/p1.png" alt="Ilustración de Tony Tony Chopper de One Piece" loading="lazy">
+					<div class="overlay">
+						<h3>One Piece</h3>
+						<p>Tony Tony Chopper</p>
+						<p>Fan de one piece</p>
+					</div>
+				</div>
+
+				<div class="proyecto" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Ampliar imagen: Digimon, Gammamon">
+					<img src="img2/p2.jpg" alt="Ilustración de Gammamon de Digimon" loading="lazy">
+					<div class="overlay">
+						<h3>Digimon</h3>
+						<p>Gammamon</p>
+						<p>Digimon favorito</p>
+					</div>
+				</div>
+
+				<div class="proyecto" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Ampliar imagen: Digimon, Kumamon">
+					<img src="img2/p3.png" alt="Ilustración de Kumamon" loading="lazy">
+					<div class="overlay">
+						<h3>Digimon</h3>
+						<p>Kumamon</p>
+						<p>De mis favoritos</p>
+					</div>
+				</div>
+
+				<div class="proyecto" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Ampliar imagen: Pokémon, Larvitar">
+					<img src="img2/p4.jpg" alt="Ilustración de Larvitar de Pokémon" loading="lazy">
+					<div class="overlay">
+						<h3>Pokemon</h3>
+						<p>Larvitar</p>
+						<p>Tambien me gusta pokemon</p>
+					</div>
+				</div>
+
+				<div class="proyecto" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Ampliar imagen: Mario Bros., Bowser Jr.">
+					<img src="img2/p5.jpg" alt="Ilustración de Bowser Jr. de Mario Bros." loading="lazy">
+					<div class="overlay">
+						<h3>Mario bros</h3>
+						<p>Bowser jr</p>
+						<p>Me gustan los juegos de nintendo</p>
+					</div>
+				</div>
+
+				<div class="proyecto" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Ampliar imagen: Digimon, V-mon">
+					<img src="img2/p6.jpg" alt="Ilustración de V-mon de Digimon" loading="lazy">
+					<div class="overlay">
+						<h3>Digimon</h3>
+						<p>Recientemente juego Digimon Card Game</p>
+					</div>
+				</div>
+
+				<div class="proyecto" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Ampliar imagen: Zelda">
+					<img src="img2/p7.jpg" alt="Ilustración de zelda majora mask" loading="lazy">
+					<div class="overlay">
+						<h3>La leyenda de zelda</h3>
+						<p>Faga Favorita</p>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	<!-- VISOR DE IMÁGENES: se abre al seleccionar una tarjeta de la galería -->
+	<dialog class="visor-imagen" id="visor-imagen" aria-label="Imagen ampliada">
+		<div class="visor-imagen__contenido">
+			<button class="visor-imagen__cerrar" type="button" aria-label="Cerrar imagen ampliada" autofocus>
+				<i class="fa-solid fa-xmark" aria-hidden="true"></i>
+			</button>
+			<img class="visor-imagen__imagen" id="visor-imagen-imagen" src="" alt="">
+			<div class="visor-imagen__texto" id="visor-imagen-texto"></div>
+		</div>
+	</dialog>
+
 	<!--footer-->
 	<footer>
-		<a href="#inicio" class="arriba">
-			<i class="fa-solid fa-angles-up"></i>
-		</a>
 		<div class="redes">
-					<a href="#"><i class="fa-brands fa-instagram"></i></a>
-					<a href="#"><i class="fa-brands fa-twitter"></i></a>
-					<a href="#"><i class="fa-brands fa-telegram"></i></a>
-					<a href="#"><i class="fa-brands fa-whatsapp"></i></a>	
-				</div>
+			<a href="https://instagram.com/helvisbasantes" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+			<a href="https://x.com/helvisbasantes" aria-label="X / Twitter" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-twitter" aria-hidden="true"></i></a>
+			<a href="https://t.me/helvis5" aria-label="Telegram" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-telegram" aria-hidden="true"></i></a>
+			<a href="https://www.linkedin.com/in/helvis-basantes-186368197" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+		</div>
 	</footer>
 
 

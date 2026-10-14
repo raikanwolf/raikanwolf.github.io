@@ -1,0 +1,126 @@
+<!--ID describes something singular.
+Class describes something with multiple elements-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<meta name="description" content="Portafolio profesional de Helvis Basantes, ingeniero informático interesado en desarrollo web e inteligencia artificial.">
+	<title>Helvis Basantes | Portafolio</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<!--MENU ENCABEZADO-->
+	<div class="contenedor-header">
+		<header><!--contenedor de logo-->
+			<div class="logo">
+				<a href="index.html">Helvis</a>
+			</div>
+			<nav id="nav"> <!--se agregara una clase "responsive con js"-->
+				<ul>
+					<li><a href="#inicio" onclick="seleccionar()">INICIO</a></li>
+					<li><a href="#sobremi" onclick="seleccionar()">SOBRE MI</a></li>
+					<li><a href="#skills" onclick="seleccionar()">SKILLS</a></li>
+					<li><a href="#curriculum" onclick="seleccionar()">CURRICULUM</a></li>
+					<li><a href="#portfolio" onclick="seleccionar()">PORTFOLIO</a></li>
+					<li><a href="#contacto" onclick="seleccionar()">CONTACTO</a></li>
+
+				</ul>
+			</nav>
+
+			<div class="nav-responsive" onclick="mostrarOcultarMenu()">
+				<i class="fa-solid fa-bars"></i>
+			</div>
+		</header>
+	</div>
+
+	<section id="portfolio" class="portfolio">
+		<div class="contenido-seccion">
+			<h2>Proyecto de tesis</h2>
+			<div class="galeria">
+
+				<div class="proyecto" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Ampliar imagen">
+					<img src="img/p1.png" alt="Ilustración de Tony Tony Chopper de One Piece" loading="lazy">
+					<div class="overlay">
+						<h3>Proyecto tesis menu</h3>
+						<p>Puede caragar los datos y clasificar</p>
+					</div>
+				</div>
+
+				<div class="proyecto" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Ampliar imagen">
+					<img src="img/p2.png" alt="Ilustración de Gammamon de Digimon" loading="lazy">
+					<div class="overlay">
+						<h3>Generacion de gráficos</h3>
+						<p>A partir de CSV Crea los graficos y los guarda</p>
+					</div>
+				</div>
+
+				<div class="proyecto" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Ampliar imagen">
+					<img src="img/p3.png" alt="Ilustración de Kumamon" loading="lazy">
+					<div class="overlay">
+						<h3>Resultados de predicción</h3>
+						<p>El agente analiza la imagen y la clasifica</p>
+					</div>
+				</div>
+
+				<div class="proyecto" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Ampliar imagen">
+					<img src="img/p4.png" alt="Ilustración de Larvitar de Pokémon" loading="lazy">
+					<div class="overlay">
+						<h3>Ejemplo de gráfico</h3>
+						<p>Carta amperimetrica normal</p>
+					</div>
+				</div>
+
+				<div class="proyecto" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Ampliar imagen">
+					<img src="img/p5.png" alt="Ilustración de Bowser Jr. de Mario Bros." loading="lazy">
+					<div class="overlay">
+						<h3>Ejemplo de gráfico</h3>
+						<p>El patron muestra fallas de corriente</p>
+					</div>
+				</div>
+
+				<div class="proyecto" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Ampliar imagen">
+					<img src="img/p6.png" alt="Ilustración de V-mon de Digimon" loading="lazy">
+					<div class="overlay">
+						<h3>Ejemplo de gráfico</h3>
+						<p>Esto es lo que el agente debe clasificar en grandes cantidades</p>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	<!-- VISOR DE IMÁGENES: se abre al seleccionar una tarjeta de la galería -->
+	<dialog class="visor-imagen" id="visor-imagen" aria-label="Imagen ampliada">
+		<div class="visor-imagen__contenido">
+			<button class="visor-imagen__cerrar" type="button" aria-label="Cerrar imagen ampliada" autofocus>
+				<i class="fa-solid fa-xmark" aria-hidden="true"></i>
+			</button>
+			<img class="visor-imagen__imagen" id="visor-imagen-imagen" src="" alt="">
+			<div class="visor-imagen__texto" id="visor-imagen-texto"></div>
+		</div>
+	</dialog>
+
+	<a href="https://github.com/raikanwolf/TDG_Helvis_Basantes" class="boton boton-cv">
+	 	Link al repo <i class="fa-solid fa-download" aria-hidden="true"></i>
+		<span class="overlay" aria-hidden="true"></span>
+	</a>
+
+	<!--footer-->
+	<footer>
+		<div class="redes">
+			<a href="https://instagram.com/helvisbasantes" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+			<a href="https://x.com/helvisbasantes" aria-label="X / Twitter" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-twitter" aria-hidden="true"></i></a>
+			<a href="https://t.me/helvis5" aria-label="Telegram" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-telegram" aria-hidden="true"></i></a>
+			<a href="https://www.linkedin.com/in/helvis-basantes-186368197" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+		</div>
+	</footer>
+
+
+	<script src="script.js"></script>
+</body>
+</html>
